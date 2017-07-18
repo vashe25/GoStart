@@ -1,0 +1,20 @@
+{{ define "index" }}
+{{ template "header" }}
+<div class="row">
+	<div class="col-md-8">1</div>
+	<div class="col-md-4">2</div>
+</div>
+
+<div class="row">
+	<div class="col-md-8">
+		{{ range $key, $value := . }}
+			<div>
+				<h3><a href="/edit?id={{ $key }}">{{ $value.Title }}</a></h3>
+				<p>{{ $value.Desc }}</p>
+			</div>
+		{{ end }}
+	</div>
+	<div class="col-md-4">4</div>
+</div>
+{{ template "footer" }}
+{{ end }}
